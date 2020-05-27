@@ -1,7 +1,7 @@
 //= require activestorage
 //= require_tree .
 
-
+/*
 $(document).ready(function() {
     var tblClass = $('div[class="container"] ul:first');
     tblClass.addClass("nav nav-tabs");
@@ -15,3 +15,4 @@ $(document).ready(function() {
         }  
     });
 });
+*/
