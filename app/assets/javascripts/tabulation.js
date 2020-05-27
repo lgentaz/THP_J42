@@ -9,9 +9,9 @@ $(document).ready(function() {
     indTab.addClass("active");
     var cards = $('div[class="card"]');
     $.each(cards, function(i){
-//        console.log(cards[i].parentElement.className)
-//        if (cards[i].parentElement.className !== "active"){
-//            cards[i].style.display ='none';
+        console.log(cards[i].parentElement.className)
+        if (cards[i].parentElement.className !== "active"){
+            cards[i].style.display ='none';
         }  
     });
 });

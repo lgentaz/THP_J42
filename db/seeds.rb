@@ -17,3 +17,5 @@ require 'faker'
     my_task.save
   end
 end
+
+user = User.create(email: "luloh.choco@yopmail.com", password: "bonjour")
