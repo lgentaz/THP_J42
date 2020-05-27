@@ -1,0 +1,17 @@
+<li id=<%= task.id %> style="list-style: none;">
+    <%= check_box_tag :status, 1, task.status, data: { remote: true, url: task_path(task.id), params: {status: !task.status}.to_param, method: "put" }%>
+    <%if task.status == true%>
+        <span class="text-muted" style="text-decoration: line-through;">
+            <%= task.title %>
+            <% unless task.deadline.nil? %> , to read: <%= task.deadline.strftime('%D')  %>
+            <% end %>
+        </span>
+    <%else%>
+        <%= task.title %>
+        <% unless task.deadline.nil? %> , to read: <%= task.deadline.strftime('%D')  %>
+        <% end %>       
+    <%end%>
+    <%= link_to task_path(task), remote: true, data: { confirm: "Confirmer la suppression" }, method: :delete do%>
+        <i class="fa fa-trash-o text-danger"></i>
+    <%end%>
+</li>

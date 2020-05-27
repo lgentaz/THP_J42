@@ -74,4 +74,4 @@ gem 'better_errors'
 
 gem 'dotenv-rails'
 
-gem 'jquery'
+gem 'jquery-rails'

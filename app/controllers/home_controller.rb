@@ -3,4 +3,6 @@ class HomeController < ApplicationController
     @tasks = Task.all
     @categories = Category.all
   end
+
+  
 end
