@@ -73,5 +73,3 @@ gem 'table_print'
 gem 'better_errors'
 
 gem 'dotenv-rails'
-
-gem 'jquery-rails'
