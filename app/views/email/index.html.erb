@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="d-flex justify-content-between">
+        <h1>Boite de reception</h1>
+        <button class="btn btn-outline-success">Recevoir un email</button>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-4">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Liste des emails</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% Email.all.each do |email|%>
+            <tr>
+            <td><%= check_box_tag :email %></td>
+            <td id=<%= email.id %>><%=email.object%></td>
+            </tr>
+            <%end%>
+            </tbody>
+            </table>
+        </div>
+        <div class="col-sm-8">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th scope="col">Email selectionné</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td id="e-title"><b>Objet : </b><%=Email.find(2).object%></td></tr>
+                    <tr><td id="e-body"><%=Email.find(2).body%></td></tr>
+                    <tr><td class="text-right"><button class="btn btn-danger btn-small">Supprimer</button></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
