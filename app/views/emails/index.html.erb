@@ -19,7 +19,9 @@
             <% Email.all.each do |email|%>
                 <tr>
                 <td><%= check_box_tag :email %></td>
-                <td id=<%= email.id %>><%=email.object%></td>
+                <td id=<%= email.id %>>
+                <%= link_to email.object, email_path(email.id), remote: true, method: 'get'%>
+                </td>
                 </tr>
             <%end%>
             </tbody>
@@ -32,7 +34,11 @@
                     <th scope="col">Email selectionné</th>
                     </tr>
                 </thead>
-                <%=render 'emails/show'%>
+                <tbody>
+                    <tr><td id="e-title"></td></tr>
+                    <tr><td id="e-body"></td></tr>
+                    <tr><td class="text-right"><button class="btn btn-danger btn-small">Supprimer</button></td></tr>
+                </tbody>
             </table>
         </div>
     </div>

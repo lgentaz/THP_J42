@@ -1,4 +1,5 @@
 class EmailsController < ApplicationController
+  before_action :authenticate_user!
   def index
   end
 
@@ -17,6 +18,19 @@ class EmailsController < ApplicationController
     end
   end
 
+  def show
+    @email = Email.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to email_path(params[:id])}
+      format.js {}
+    end
+  end
+
+  private
+
+  def email_params
+    params.permit(:id, :body, :object)
+  end
 
 
 end
