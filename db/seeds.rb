@@ -21,7 +21,6 @@ end
 user = User.create(email: "luloh.choco@yopmail.com", password: "bonjour")
 
 25.times do
-  my_email = Email.create(object: Faker::Lorem.sentence,
-                      body: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4))
+  my_email = Email.create(object: Faker::Lorem.sentence, body: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4))
 
 end
