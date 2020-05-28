@@ -1,7 +1,9 @@
 <div class="container">
     <div class="d-flex justify-content-between">
         <h1>Boite de reception</h1>
+        <%= link_to emails_path(), remote: true, method: 'post' do%>
         <button class="btn btn-outline-success">Recevoir un email</button>
+        <%end%>
     </div>
     <br>
     <div class="row">
@@ -13,12 +15,12 @@
                 <th scope="col">Liste des emails</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="maillist">
             <% Email.all.each do |email|%>
-            <tr>
-            <td><%= check_box_tag :email %></td>
-            <td id=<%= email.id %>><%=email.object%></td>
-            </tr>
+                <tr>
+                <td><%= check_box_tag :email %></td>
+                <td id=<%= email.id %>><%=email.object%></td>
+                </tr>
             <%end%>
             </tbody>
             </table>
@@ -31,8 +33,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td id="e-title"><b>Objet : </b><%=Email.find(2).object%></td></tr>
-                    <tr><td id="e-body"><%=Email.find(2).body%></td></tr>
+                    <tr><td id="e-title"><b>Objet : </b><%=Email.first.object%></td></tr>
+                    <tr><td id="e-body"><%=Email.first.body%></td></tr>
                     <tr><td class="text-right"><button class="btn btn-danger btn-small">Supprimer</button></td></tr>
                 </tbody>
             </table>
