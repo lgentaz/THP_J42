@@ -32,11 +32,7 @@
                     <th scope="col">Email selectionné</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr><td id="e-title"><b>Objet : </b><%=Email.first.object%></td></tr>
-                    <tr><td id="e-body"><%=Email.first.body%></td></tr>
-                    <tr><td class="text-right"><button class="btn btn-danger btn-small">Supprimer</button></td></tr>
-                </tbody>
+                <%=render 'emails/show'%>
             </table>
         </div>
     </div>
