@@ -1,2 +1,1 @@
-document.getElementById("e-title").innerHTML = "<%= @email.object %>";
-document.getElementById("e-body").innerHTML = "<%= @email.body %>"
+document.getElementById("display").innerHTML = "<%= j render 'show', email: @email %>"

@@ -1,6 +1,7 @@
 class EmailsController < ApplicationController
   before_action :authenticate_user!
   def index
+    @emails = Email.all
   end
 
   def create
@@ -22,6 +23,15 @@ class EmailsController < ApplicationController
     @email = Email.find(params[:id])
     respond_to do |format|
       format.html { redirect_to email_path(params[:id])}
+      format.js {}
+    end
+  end
+
+  def destroy
+    @email = Email.find(params[:id])
+    @email.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path }
       format.js {}
     end
   end

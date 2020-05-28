@@ -1,0 +1,9 @@
+<div>
+<tr><td id="e-title"><%=email.object%></td></tr>
+<tr><td id="e-body"><%=email.body%></td></tr>
+<tr><td class="text-right">
+<%= link_to "Marquer comme lu", email_path(email), remote: true, class:"btn btn-info btn-small"%>
+<%= link_to "Supprimer", email_path(email), remote: true, data: { confirm: "Confirmer la suppression" }, method: :delete, class:"btn btn-danger btn-small"%>
+</td>
+</tr>
+</div>

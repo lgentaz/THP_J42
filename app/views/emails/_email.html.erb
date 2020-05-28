@@ -1,4 +1,6 @@
-<tr>
+<tr id=<%= email.id %>>
 <td><%= check_box_tag :email %></td>
-<td id=<%= @email.id %>><%=@email.object%></td>
+<td>
+<%= link_to email.object, email_path(email.id), remote: true, method: 'get', class: "text-dark"%>
+</td>
 </tr>
