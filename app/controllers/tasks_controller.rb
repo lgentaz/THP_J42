@@ -50,7 +50,6 @@ before_action :authenticate_user!
     end
   end
 
-
   private
 
   def task_params

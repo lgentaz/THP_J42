@@ -21,6 +21,8 @@ class EmailsController < ApplicationController
 
   def show
     @email = Email.find(params[:id])
+    @email.read = true
+    @email.save
     respond_to do |format|
       format.html { redirect_to email_path(params[:id])}
       format.js {}
@@ -30,6 +32,15 @@ class EmailsController < ApplicationController
   def destroy
     @email = Email.find(params[:id])
     @email.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js {}
+    end
+  end
+
+  def update
+    @email = Email.find(params[:id])
+    @email.update!(read: !@email.read)
     respond_to do |format|
       format.html { redirect_to root_path }
       format.js {}

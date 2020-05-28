@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="background: no-repeat center/100% url('https://www.zohowebstatic.com/sites/default/files/mail/manage-multiple-assests.png');">
     <div class="d-flex justify-content-between">
         <h1>Boite de reception</h1>
         <%= link_to emails_path(), remote: true, method: 'post' do%>
@@ -15,8 +15,8 @@
                 <th scope="col">Liste des emails</th>
                 </tr>
             </thead>
-            <tbody id="maillist">
-            <% @emails.each do |email|%>
+            <tbody id="maillist" style="background-color: rgba(255, 255, 255, 0.9);" >
+            <% @emails.order("id ASC").each do |email|%>
                 <%= render 'email', email: email %>
             <%end%>
             </tbody>
@@ -29,8 +29,8 @@
                     <th scope="col">Email selectionné</th>
                     </tr>
                 </thead>
-                <tbody id="display">
-                
+                <tbody id="display" style="background-color: rgba(255, 255, 255, 0.9);">
+
                 </tbody>
             </table>
         </div>
