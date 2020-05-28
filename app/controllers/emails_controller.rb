@@ -6,7 +6,7 @@ class EmailsController < ApplicationController
 
   def create
     @email = Email.new(object: Faker::Lorem.sentence, body: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4))
-    if @email.save
+    if @email.save!
       respond_to do |format|
         format.html { redirect_to root_path }
         format.js {}
@@ -21,8 +21,7 @@ class EmailsController < ApplicationController
 
   def show
     @email = Email.find(params[:id])
-    @email.read = true
-    @email.save
+    @email.update!(read: true)
     respond_to do |format|
       format.html { redirect_to email_path(params[:id])}
       format.js {}

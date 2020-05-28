@@ -1,7 +1,7 @@
 <tr id=<%= email.id %>>
 <td><%= check_box_tag :read, 1, email.read, data: { remote: true, url: email_path(email.id), params: {status: !email.read}.to_param, method: "put" }%></td>
 <td>
-<%= link_to email.object, email_path(email.id), remote: true, method: 'get', class:"text-secondary"%>
+<%= link_to email.object, email_path(email.id), remote: true, method: 'get', class:"text-dark"%>
 </td>
 </tr>
 
